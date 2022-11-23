@@ -12,7 +12,7 @@
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %level - %m%n%ex%n"/>
         </Console>
         
-        <RollingFile name="rolling_error" fileName="D:/app/manager_logs/error.log" filePattern="D:/app/manager_logs/error-%d{yyyy-MM-dd}.log-%i">
+        <RollingFile name="rolling_error" fileName="C:/app/manager_logs/error.log" filePattern="C:/app/manager_logs/error-%d{yyyy-MM-dd}.log-%i">
             <PatternLayout pattern="[%-5p] %d{yy-MM-dd HH:mm:ss} [%C{2}][%M][%L] - %m%n" />
             <Policies>
                 <Policies>
