@@ -7,9 +7,9 @@ import java.sql.DriverManager;
 
 import org.junit.Test;
 
-import lombok.extern.log4j.Log4j;
+import lombok.extern.log4j.Log4j2;
 
-@Log4j
+@Log4j2
 public class JDBCTests {
 	static {
 		try {

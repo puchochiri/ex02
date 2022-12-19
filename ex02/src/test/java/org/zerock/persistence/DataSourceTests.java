@@ -15,13 +15,13 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import lombok.Setter;
-import lombok.extern.log4j.Log4j;
+import lombok.extern.log4j.Log4j2;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
-//Java 서ㅕㄹ정을 사용하는 경우
+//Java 설정을 사용하는 경우
 //@ContextConfiguration(classes= {RootConfig.class})
-@Log4j
+@Log4j2
 public class DataSourceTests {
 	@Setter(onMethod_ = { @Autowired })
 	private DataSource dataSource;
