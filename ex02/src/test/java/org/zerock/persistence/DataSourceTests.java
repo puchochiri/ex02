@@ -33,7 +33,7 @@ public class DataSourceTests {
 	@Test
 	public void testConnection() {
 		try(Connection con = dataSource.getConnection()){
-			log.info(con);
+			log.info("dataSourceConnection:" + con);
 		} catch (Exception e) {
 			fail(e.getMessage());
 		}
@@ -47,8 +47,8 @@ public class DataSourceTests {
 				Connection con = session.getConnection();
 				) {
 			
-			log.info(session);
-			log.info(con);
+			log.info("sessionFactory: " + session);
+			log.info("sessionConnection: " + con);
 			
 		} catch (Exception e) {
 			fail(e.getMessage());

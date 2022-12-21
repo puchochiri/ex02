@@ -5,17 +5,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="org.zerock.mapper.BoardMapper">
 
 	<select id="getList" resultType="org.zerock.domain.BoardVO">
+	/* getList */
 	<![CDATA[
 	select * from tbl_board where bno > 0
 	]]>
 	</select>
 
 	<insert id="insert">
+	/* insert */
 		insert into tbl_board (bno,title,content,writer)
 		values (seq_board.nextval, #{title}, #{content}, #{writer})
 	</insert>
 	
 	<insert id="insertSelectKey">
+	/* insertSelectKey */
 		<selectKey keyProperty="bno" order="BEFORE"
 			resultType="long">
 			select seq_board.nextval from dual
@@ -25,14 +28,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 	
 	<select id="read" resultType="org.zerock.domain.BoardVO">
+	/* read */
 		select * from tbl_board where bno = #{bno}
 	</select>
 	
 	<delete id="delete">
+	/* delete */
 		delete from tbl_board where bno = #{bno}
 	</delete>
 	
 	<update id="update">
+	/* update */
 		update tbl_board
 		set title = #{title},
 		content = #{content},
@@ -42,6 +48,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</update>
 	
 	<select id="getListWithPaging" resultType="org.zerock.domain.BoardVO">
+	/* getListWithPaging */
 		<![CDATA[
 		select
 		    rn, bno, title, content, writer, regdate, updatedate
@@ -63,6 +70,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>	
 	
 	<select id="getTotalCount" resultType="int">
+	/* getTotalCount */
 		select count(*) from tbl_board 
 		where 
 		<include refid="criteria"></include>
